@@ -4,24 +4,35 @@
 
 
 2. 向各實驗室確認SQL Table型態，大致分為低採樣率與高採樣率資料
-  - 低採樣率資料，例如溫度、機器目前的狀態、flags...
-    - 構想資料格式
+  - 低採樣率/離散，例如溫度、機器目前的狀態、flags...
+    - 資料格式
+      - properties format: machine_ID, all_data_name, physical_unit, data: sensor_model, data:DAQ model
+      - ex: properties: [data_name_1,data_name_2], [None, degree_C], [None, TMP1826], NI9234
 
-| Timestamp     | data1 | data2 | physical unit1 | physical unit2 | status | flags |
-| ------------- | ----- | ----- | -------------- | -------------- | ------ | ----- |
-| IsoTimeFormat | data  | data  | unit1          | unit2          | run    | 0     |
-| IsoTimeFormat | data  | data  | unit1          | unit2          | idle   | 1     |
+      | Timestamp     | data_name   | value |
+      | ------------- | ----------- | ----- |
+      | IsoTimeFormat | data_name_1 | value |
+      | IsoTimeFormat | data_name_2 | value |
+
+    - 在分析之前需要另一個轉接程式變成以下型態
+
+      | Timestamp     | data_name_1 | data_name_2 | data_name_3 |
+      | ------------- | ----------- | ----------- | ----------- |
+      | IsoTimeFormat | value       | value       | value       |
+      | IsoTimeFormat | value       | value       | value       |
 
   - 高採樣率資料，因應讀取速度，建議採用datastore形式
-    - 構想資料格式
-      - properties format: sample rate, physical unit, sensor model, DAQ model
-        - ex: properties: sample rate, g, 35C233, NI9234
-      - 這些 properties 寫在對應的 config 檔
-    
-| Timestamp(segment start time) | data path            |
-| ----------------------------- | -------------------- |
-| IsoTimeFormat                 | \timestamp_data1.csv |
-| IsoTimeFormat                 | \ttimstamp_data2.csv |
+    - 資料格式
+      - properties format: machine_ID, data_name, sample_rate, physical_unit, sensor_model, DAQ model
+        - ex: properties: data_name, sample_rate, g, 35C233, NI9234
+      
+      | Timestamp(segment start time) | data path            |
+      | ----------------------------- | -------------------- |
+      | IsoTimeFormat                 | \timestamp_data1.csv |
+      | IsoTimeFormat                 | \ttimstamp_data2.csv |
+
+   - properties 寫在對應的 config(*.json)
+   - 如果一台機器同時擁有連續與離散的資料，則融合前面兩種資訊
 
 3. 在各實驗室架設SQL伺服器
   - 101
@@ -29,3 +40,4 @@
   - 109
   
 4. 整合各實驗室的SQL伺服器，上傳或連線至工102 SQL伺服器
+5. 圖形化的方式
