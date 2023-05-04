@@ -33,8 +33,8 @@
       
       | Timestamp(segment start time) | data path            |
       | ----------------------------- | -------------------- |
-      | IsoTimeFormat                 | \timestamp_data1.csv |
-      | IsoTimeFormat                 | \ttimstamp_data2.csv |
+      | IsoTimeFormat                 | \timestamp_data1.npy |
+      | IsoTimeFormat                 | \ttimstamp_data2.npy |
 
    - properties 寫在對應的 config(*.json)
   - 如果一台機器同時擁有連續與離散的資料，則融合前面兩種資訊
