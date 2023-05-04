@@ -1,4 +1,8 @@
-1. 架設MySQL伺服器 v
+
+# 智慧廊道資料系統整合規劃
+
+1. 架設工102 SQL伺服器 v
+   - 使用MySQL
    - 確認MySQL Client 可透過 Global IP連線 v
      - IP: 140.134.76.145:3306 v
 
@@ -6,7 +10,7 @@
 2. 向各實驗室確認SQL Table型態，大致分為低採樣率與高採樣率資料
   - 低採樣率/離散，例如溫度、機器目前的狀態、flags...
     - 資料格式
-      - properties format: machine_ID, all_data_name, physical_unit, data: sensor_model, data:DAQ model
+      - properties format: machine_ID, all_data_name, physical_unit, data: sensor_model, data: DAQ model
       - ex: properties: [data_name_1,data_name_2], [None, degree_C], [None, TMP1826], NI9234
 
       | Timestamp     | data_name   | value |
