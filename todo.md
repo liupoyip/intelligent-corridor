@@ -2,7 +2,7 @@
    - 確認MySQL Client 可透過 Global IP連線 v
      - IP: 140.134.76.145:3306 v
 
----
+
 2. 向各實驗室確認SQL Table型態，大致分為低採樣率與高採樣率資料
   - 低採樣率資料，例如溫度、機器目前的狀態、flags...
     - 構想資料格式
@@ -23,10 +23,9 @@
 | IsoTimeFormat                 | \timestamp_data1.csv |
 | IsoTimeFormat                 | \ttimstamp_data2.csv |
 
----
-1. 在各實驗室架設SQL伺服器
+3. 在各實驗室架設SQL伺服器
   - 101
   - 107
   - 109
   
-2. 整合各實驗室的SQL伺服器，上傳或連線至工102 SQL伺服器
+4. 整合各實驗室的SQL伺服器，上傳或連線至工102 SQL伺服器
