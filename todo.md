@@ -11,7 +11,8 @@
   - 低採樣率/離散，例如溫度、機器目前的狀態、flags...
     - 資料格式
       - properties format: machine_ID, all_data_name, physical_unit, data: sensor_model, data: DAQ model
-      - ex: properties: [data_name_1,data_name_2], [None, degree_C], [None, TMP1826], NI9234
+      - ex: properties: [data_name_1,data_name_2], [None, degree_C], [None, TMP1826], [None, DAQ_1]
+      - PS: 如果是從機台拉出來的資料不具備單位、sensor等屬性的話，則寫入None
 
       | Timestamp     | data_name   | value |
       | ------------- | ----------- | ----- |
