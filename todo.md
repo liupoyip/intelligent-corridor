@@ -3,27 +3,29 @@
      - IP: 140.134.76.145:3306 v
 
 ---
-
-2. 向各實驗室確認SQL Table型態
-  - 低採樣率資料
+2. 向各實驗室確認SQL Table型態，大致分為低採樣率與高採樣率資料
+  - 低採樣率資料，例如溫度、機器目前的狀態、flags...
     - 構想資料格式
 
-| Timestamp     | data1 | data2 | physical unit1 | physical unit2 |
-| ------------- | ----- | ----- | -------------- | -------------- |
-| IsoTimeFormat | data  | data  | unit1          | unit2          |
-| IsoTimeFormat | data  | data  | unit1          | unit2          |
+| Timestamp     | data1 | data2 | physical unit1 | physical unit2 | status | flags |
+| ------------- | ----- | ----- | -------------- | -------------- | ------ | ----- |
+| IsoTimeFormat | data  | data  | unit1          | unit2          | run    | 0     |
+| IsoTimeFormat | data  | data  | unit1          | unit2          | idle   | 1     |
 
   - 高採樣率資料，因應讀取速度，建議採用datastore形式
     - 構想資料格式
-
-| Timestamp(starttime) | samplerate | physical unit | data path | sensor model | DAQ model |
-| -------------------- | ---------- | ------------- | --------- | ------------ | --------- |
-| IsoTimeFormat        | 12000      | unit1         | path1     | 35Q33        | NI9234    |
-| IsoTimeFormat        | 6000       | unit1         | path2     | 13NQ         | NI9234    |
+      - properties format: sample rate, physical unit, sensor model, DAQ model
+        - ex: properties: sample rate, g, 35C233, NI9234
+      - 這些 properties 寫在對應的 config 檔
+    
+| Timestamp(segment start time) | data path            |
+| ----------------------------- | -------------------- |
+| IsoTimeFormat                 | \timestamp_data1.csv |
+| IsoTimeFormat                 | \ttimstamp_data2.csv |
 
 ---
 1. 在各實驗室架設SQL伺服器
-  - 101 ?
+  - 101
   - 107
   - 109
   
