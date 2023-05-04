@@ -7,10 +7,17 @@ db_settings = {
     "user": "AIoTLab-MySQL",
     "password": "db309-1",
     "db": "test_schema",
-    "charset": "utf8"
+    "charset": "utf8",
 }
 
 try:
     conn = pymysql.connect(**db_settings)
+
 except Exception as ex:
     print(f'Error: {ex}')
+
+mycursor = conn.cursor()
+mycursor.execute("SHOW TABLES")
+
+for table in mycursor:
+    print(table)
