@@ -26,7 +26,7 @@
       | IsoTimeFormat | value       | value       | value       |
       | IsoTimeFormat | value       | value       | value       |
 
-   - 高採樣率資料，因應讀取速度，建議採用datastore形式
+   - 高採樣率資料，因應讀取速度，採用datastore形式 (**以之前的DAQ軟體做測試**)
      - 資料格式
        - properties format: machine_ID, data_name, sample_rate, physical_unit, sensor_model, DAQ_model
         - ex: properties: 107-CNC, data_name, sample_rate, g, 35C233, NI9234
