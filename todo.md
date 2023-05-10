@@ -4,6 +4,7 @@
 1. 架設工102 SQL伺服器 v
    - 使用MySQL v
    - 確認MySQL Client 可透過 Global IP連線 v
+     - user: AIoTLab-MySQL
      - IP: 140.134.76.145:3306 v
 
 
@@ -43,16 +44,20 @@
    - 101
      - 目前狀況
        - 各機台有蒐集數據，放在各機台的操作電腦上
-       - 沒有SQL伺服器
-       - 有Router(?)，但沒在用
+       - 沒有SQL伺服器 v 已架設
+       - 有Router(?)，但沒在用，機器基本上都是Global IP
        - 數據格式未統一
        - 大射出機和小射出機的控制器內部數據，可經由一台OPCUA server下載，先用這裡的數據呈現會比較快
          - OPCUA server後面接一台PC(PC內含SQL server)，可下載Server數據，同時上傳至SQL
      - 需要先做的事情
-       - 確認Router IP, port設定
-       - 命名SQL的方式?
+       - ~~確認Router IP, port設定~~ 使用Global IP，不需要
+       
      - suggestion
        - 每一個實驗室都架好server，且有獨立的戰情畫面(?)，102這邊再遠端(?)之類的
+     - 已完成事宜
+       - 已架設SQL伺服器
+         - User: IMDMC-SQL
+         - IP: 140.134.76.189:3306
    - 107
    - 109
   
