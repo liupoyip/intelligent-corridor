@@ -32,13 +32,21 @@
        - properties format: machine_ID, data_name, sample_rate, physical_unit, sensor_model, DAQ_model
         - ex: properties: 107-CNC, data_name, sample_rate, g, 35C233, NI9234
       
-      | Timestamp(segment start time) | data path            |
-      | ----------------------------- | -------------------- |
-      | IsoTimeFormat                 | \timestamp_data1.npy |
-      | IsoTimeFormat                 | \ttimstamp_data2.npy |
+      | Timestamp(segment start time) | data path        |
+      | ----------------------------- | ---------------- |
+      | IsoTimeFormat                 | \timestamp_data1 |
+      | IsoTimeFormat                 | \ttimstamp_data2 |
 
    - properties 寫在對應的 config(*.json)
   - 如果一台機器同時擁有連續與離散的資料，則融合前面兩種資訊
+  - 
+  - 目前已經完成儲存segment化的步驟
+  - suggestion from prowave: 
+    - define有效的資料是什麼樣的類型
+    - raw -> 留有效的時間
+    - watchdog : 定期整理/刪除資料
+
+
 
 3. 在各實驗室架設SQL伺服器
    - 101
