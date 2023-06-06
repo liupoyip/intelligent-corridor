@@ -6,3 +6,4 @@ numpy
 nidaqmx
 pandas
 pymysql
+watchdog
