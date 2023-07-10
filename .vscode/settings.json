@@ -1,4 +1,3 @@
 {
     "python.defaultInterpreterPath": "${workspaceFolder}/.venv/intelligent-corridor/",
-    "qtForPython.designer.path": "${workspaceFolder}/.venv/intelligent-corridor/Lib/site-packages/qt6_applications/Qt/bin/designer.exe",
 }

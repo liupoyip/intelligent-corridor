@@ -1,9 +1,2 @@
-autopep8
-pyside6
-pyqt6
-pyqt6-tools
 numpy
-nidaqmx
 pandas
-pymysql
-watchdog
