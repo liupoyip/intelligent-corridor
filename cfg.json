@@ -1,0 +1,28 @@
+{
+    "__comment": "路徑: database/{$lab}/{$machine}/{task}/{table_name}/",
+    "database_dir": "Y:/",
+    "host": "140.134.76.145",
+    "port": 3306,
+    "user": "AIoTLab-MySQL",
+    "password": "db309-1",
+    "machine": "machine_0",
+    "task": "task_0",
+    "task_cfg": "cfg.json",
+    "rawdata_table_name": "rawdata",
+    "lab": "E102",
+    "headers": [
+        "task",
+        "start_time",
+        "record_cfg_path"
+    ],
+    "data_types": [
+        "VARCHAR(127)",
+        "VARCHAR(15)",
+        "VARCHAR(255)"
+    ],
+    "values": [
+        "%s",
+        "%s",
+        "%s"
+    ]
+}
